@@ -9,11 +9,11 @@ export function FooterContainer() {
             <Footer.Break />
             <Footer.Row>
                 {
-                    footerData.map(columnElem => (
-                        <Footer.Column>
+                    footerData.map((columnElem, index) => (
+                        <Footer.Column key={`footer_${index}`}>
                             {
-                                columnElem.map(linkElem => (
-                                    <Footer.Link href="#" onMouseOver={onMouseEnter} onMouseLeave={onMouseLeaving} >{linkElem}</Footer.Link>
+                                columnElem.map((linkElem, linkIndex) => (
+                                    <Footer.Link key={`link_${linkIndex}`} href="#" onMouseOver={onMouseEnter} onMouseLeave={onMouseLeaving} >{linkElem}</Footer.Link>
                                 ))
                             }
                         </Footer.Column>
